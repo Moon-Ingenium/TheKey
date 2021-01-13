@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
@@ -27,47 +26,23 @@
         </div>
     </header>
     <div class="row">
-        <div class="col-md-8">
+        <div class="container">
             <div class="card">
-                <div class="row">
-                    <div id="weekday"> 
-                    </div>
+                <div class="card-title">
+                    Resources
                 </div>
-                <div class="row">
-                    <div id="calendar-day">
-                        
-                    </div>
+                <div class="card-body resource-body">
+                    <form class="form-inline">
+                        <input  id="link" placeholder="Enter Resource"><button class="btn" id="add"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-primary"><i class="fa fa-trash" id ="delete"></i></button></form>
+                    
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-title" id="time"></div>
-                <div id="clock-rim">
-                    <div id="clock-face">
-                        <div id="notch-container"></div>
-                        <div id="hour"></div>
-                        <div id="minute"></div>
-                        <div id="second"></div>
-                        <div id="center"></div>
-                    </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                Timer
-            </div>
-        </div>
-    </div>
-  
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>

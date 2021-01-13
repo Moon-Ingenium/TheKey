@@ -1,0 +1,124 @@
+.navbar-brand {
+    font-size: 60px;
+    color: black;
+    font-family: 'Fredericka the Great';
+  margin-left: 20px;
+}
+.navbar {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 31px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  26px 26px 52px #a4a4a4,
+                 -26px -26px 52px #ffffff;
+  }
+
+  .navbar-item{
+      color:Black;
+      text-decoration: none;
+      padding: 10px;
+      justify-content: end;
+  }
+  a:hover{
+    color:rgb(114, 105, 105);
+    text-decoration: none;
+  }
+  p{
+      padding: 15px;
+  }
+  body {
+      background-color: #e0e0e0;
+  }
+  .card{
+    border-radius: 31px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  26px 26px 52px #a4a4a4,
+                 -26px -26px 52px #ffffff;
+    padding: 15px;
+    border: none;
+    margin-top: 30px;
+  }
+  .btn{
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffffff, #dddddd);
+    box-shadow:  25px 25px 50px #acacac,
+                 -25px -25px 50px #ffffff;
+                 border: none;
+  }
+  .btn:hover{ 
+      border-radius: 50%;
+    background: #f5f5f5;
+    box-shadow: inset 25px 25px 50px #959595,
+            inset -25px -25px 50px #ffffff;
+  }
+  .fa{
+      color:black;
+  }
+  .card-title{
+    text-align: center;
+    border-bottom: solid;
+    font-size: 30px;
+    padding: 30px;
+    font-family: 'Fredericka the Great';
+  }
+  .container{
+      padding: 50px;
+  }
+/* -- The outside rim of the clock with gradient -- */
+#clock-rim {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(gray, black);
+  border-radius: 150px;
+}
+/* -- Clock's face -- */
+#clock-face {
+  display: block;
+  position: relative;  
+  width: 260px;
+  height: 260px;
+  margin: 19px auto;
+  border-radius: 150px;
+  background: white;
+}
+/* -- Second hand -- */
+#second { position: absolute; top: 123px; left: 128px; width: 100px; height: 2px; border: 1px solid transparent; border-radius: 5px; transform: unset; background: green; transform-origin: 1px 1px; }
+/* -- Minute hand -- */
+#minute { position: absolute; top: 123px; left: 128px; width: 100px; height: 4px; border: 1px solid transparent; border-radius: 5px; transform: unset; background: red; transform-origin: 2px 2px; }
+/* -- Hour hand -- */
+#hour { position: absolute; top: 123px; left: 128px; width: 50px; height: 4px; border: 1px solid transparent; border-radius: 5px; transform: unset; background: blue; transform-origin: 2px 2px; }
+/* -- Center of the clock -- */
+#center { position: absolute; top: 118px; left: 120px; width: 16px; height: 16px; background: white; border: 1px solid gray; border-radius: 16px; }
+/* -- "HTML clock"  in a box -- */
+#brand { position: absolute; top: 110px; left: 165px; border: 1px solid gray; border-radius: 5px; width: 50px; height: 40px; font-family: Verdana; font-size: 11px; text-align: center; line-height: 20px; }
+/* -- Notches container -- */
+#notch-container { width: 260px; height: 260px }
+/* -- Hourly notch (thicker, but sparse) -- */
+.notch { position: absolute; width: 10px; height: 2px; background: black; border-radius: 5px 5px 5px 5px; }
+/* -- Minute notch (thin) -- */
+.thin { position: absolute; width: 10px; height: 1px; border-top: 1px solid gray; }
+
+#link{
+    border-radius: 20px;
+    border:none;
+background: #f5f5f5;
+box-shadow: inset 11px 11px 28px #c9c9c9,
+            inset -11px -11px 28px #ffffff;
+            text-align: center;
+            width: 60%;
+            margin-left: 15px;
+            margin-right: 15px;
+}
+#calendar-day{
+    font-size: 30px;
+    text-align: center;
+}
+#weekday{
+    font-size: 60px;
+    font-family: 'Fredericka the Great';
+  margin-left: 20px;
+  text-align: center;
+}
