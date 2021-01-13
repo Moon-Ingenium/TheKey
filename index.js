@@ -85,14 +85,15 @@ let calendarEl = document.getElementById('calendar-day');
 calendarEl.innerHTML = calendarDay;
 
 let addBttnEl = document.querySelector("#add");
-let deleteBttnEl = document.querySelector("#delete");
 
 function addResource() {
     let cardEl = document.querySelector(".resource-body");
     const input = document.querySelector("#link").value;
     const pEl = document.createElement("p");
     const aEl = document.createElement("a").setAttribute("href", input);
+    const deleteBttnEl = document.createElement("button").setAttribute('class', 'delete')
     cardEl.appendChild(pEl);
-    pEl.appendChild(aEl);
+    pEl.appendChild(aEl).appendChild(deleteBttnEl);
+    
 }
 
