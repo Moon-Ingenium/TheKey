@@ -22,3 +22,4 @@ addBttnEl.addEventListener("click",function addResource() {
    localStorage.setItem("resource", val);
     document.getElementById('form').reset();
 });
+
