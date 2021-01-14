@@ -9,6 +9,7 @@ addBttnEl.addEventListener("click",function addResource() {
     const aEl = document.createElement("a");
     const pEl = document.createElement("p");
     aEl.setAttribute("href", input);
+    aEl.setAttribute("target", "_blank");
     aEl.textContent= input;
     const deleteBttnEl = document.createElement("button");
     deleteBttnEl.setAttribute('class', 'btn');
