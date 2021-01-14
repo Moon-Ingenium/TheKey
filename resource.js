@@ -19,7 +19,7 @@ addBttnEl.addEventListener("click",function addResource() {
     pEl.append(aEl);
     pEl.append(deleteBttnEl);
     // store to local storage
-   localStorage.setItem("resource", val);
+//    localStorage.setItem("resource", val);
     document.getElementById('form').reset();
 });
 

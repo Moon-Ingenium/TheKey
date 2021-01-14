@@ -24,9 +24,6 @@
     color:rgb(114, 105, 105);
     text-decoration: none;
   }
-  p{
-      padding: 15px;
-  }
   body {
       background-color: #e0e0e0;
   }
@@ -126,4 +123,7 @@ box-shadow: inset 11px 11px 28px #c9c9c9,
 a{
     color:black;
     text-decoration: none;
+}
+p{
+    padding: 15px;
 }
