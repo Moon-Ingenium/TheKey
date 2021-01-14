@@ -45,6 +45,7 @@
     box-shadow:  25px 25px 50px #acacac,
                  -25px -25px 50px #ffffff;
                  border: none;
+    margin-left: 10px;
   }
   .btn:hover{ 
       border-radius: 50%;
@@ -122,4 +123,7 @@ box-shadow: inset 11px 11px 28px #c9c9c9,
   margin-left: 20px;
   text-align: center;
 }
-
+a{
+    color:black;
+    text-decoration: none;
+}
