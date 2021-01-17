@@ -1,11 +1,9 @@
 let addBttnEl = document.getElementById("add");
 let storage = localStorage.getItem("resource");
 let cardEl = document.querySelector(".resource-body");
+var resource = localStorage.getItem("resource");
 
-
-addBttnEl.addEventListener("click",function addResource() {
-    event.preventDefault();
-    const input = document.querySelector("#link").value;
+function buildCard(input) {
     const aEl = document.createElement("a");
     const pEl = document.createElement("p");
     aEl.setAttribute("href", input);
@@ -19,8 +17,27 @@ addBttnEl.addEventListener("click",function addResource() {
     cardEl.append(pEl);
     pEl.append(aEl);
     pEl.append(deleteBttnEl);
-    // store to local storage
-//    localStorage.setItem("resource", val);
-    document.getElementById('form').reset();
+}
+// when the page loads, read from local storage
+window.onload = function() {
+    if  (resource) {
+        resource.split(',').forEach((item) => {
+            buildCard(item);
+        })
+    }
+};
+
+addBttnEl.addEventListener("click",function addResource() {
+    event.preventDefault();
+    const input = document.querySelector("#link").value;
+    
+    if (input.length) {
+        buildCard(input);
+        // store to local storage
+        resource = resource ? resource + ',' + input : input;
+        localStorage.setItem("resource", resource);
+        document.getElementById('form').reset();
+    }
+    
 });
 
