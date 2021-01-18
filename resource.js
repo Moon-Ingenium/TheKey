@@ -1,5 +1,4 @@
 let addBttnEl = document.getElementById("add");
-let storage = localStorage.getItem("resource");
 let cardEl = document.querySelector(".resource-body");
 var resource = localStorage.getItem("resource");
 
@@ -13,6 +12,7 @@ function buildCard(input) {
     deleteBttnEl.setAttribute('class', 'btn');
     const delIcon = document.createElement("i");
     delIcon.setAttribute("class", "fa fa-trash");
+    
     deleteBttnEl.append(delIcon);
     cardEl.append(pEl);
     pEl.append(aEl);
@@ -40,4 +40,5 @@ addBttnEl.addEventListener("click",function addResource() {
     }
     
 });
-
+// add data attribute to dynamic delete button 
+// on click event to delete from card and to delete from local storage

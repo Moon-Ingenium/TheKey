@@ -76,5 +76,23 @@ let calendarDay = moment().format('ll');
 weekdayEl.innerHTML = momentDay;
 let calendarEl = document.getElementById('calendar-day');
 calendarEl.innerHTML = calendarDay;
+// add API to display a new quote per day
 
+// create Break Timer
 
+let breakHour = 3600;
+const timerElCard = document.querySelector(".break-card");
+let face = document.getElementById("lazy").textContent = formatTime(breakHour);
+const breakBtnEl = document.getElementById("start-break-timer");
+
+function startCountdown(breakhour) {
+    setInterval(function () {
+        face = document.getElementById("lazy").textContent = formatTime(breakHour);
+        breakHour--;
+        if (breakHour < 0) {
+            clearInterval();
+        }
+    }, 1000
+    );
+}
+breakBtnEl.addEventListener("click", startCountdown);

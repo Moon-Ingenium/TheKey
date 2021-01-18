@@ -30,12 +30,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="row">
-                    <div id="weekday"> 
+                    <div id="weekday">
                     </div>
                 </div>
                 <div class="row">
                     <div id="calendar-day">
-                        
+
                     </div>
                 </div>
             </div>
@@ -51,23 +51,42 @@
                         <div id="second"></div>
                         <div id="center"></div>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                Timer
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card break-card">
+                    <div class="card-title">Productivity Timer</div>
+                    <div class="timer-group">
+                        <div class="timer hour">
+                            <div class="hand"><span></span></div>
+                            <div class="hand"><span></span></div>
+                        </div>
+                        <div class="timer minute">
+                            <div class="hand"><span></span></div>
+                            <div class="hand"><span></span></div>
+                        </div>
+                        <div class="timer second">
+                            <div class="hand"><span></span></div>
+                            <div class="hand"><span></span></div>
+                        </div>
+                        <div class="face">
+                            <h2>Break Timer</h2>
+                            <p id="lazy">00:00:00</p>
+                            <button id="start-break-timer"><i class="fa fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-  
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-        crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+            crossorigin="anonymous"></script>
+        <script src="./index.js"></script>
 </body>
