@@ -70,8 +70,9 @@
   position: relative;
   width: 300px;
   height: 300px;
-  background: linear-gradient(gray, black);
   border-radius: 150px;
+  background: linear-gradient(145deg, #3b3838, #322f2f);
+
 }
 /* -- Clock's face -- */
 #clock-face {
@@ -137,6 +138,10 @@ p{
   margin: 0 auto;
   position: relative;
   width: 400px;
+  border-radius: 50%;
+  background: #373434;
+  box-shadow:  28px 28px 70px #2f2d2d,
+               -28px -28px 70px #3f3b3b;
 }
 
 .timer {
@@ -145,6 +150,7 @@ p{
   overflow: hidden;
   position: absolute;
   width: 100px;
+  
 }
 
 .timer:after {
@@ -157,46 +163,7 @@ p{
   position: absolute;
   width: 80px;
   top: 10px;
-}
-
-.timer .hand {
-  float: left;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 50%;
-}
-
-.timer .hand span {
-  border: 50px solid rgba(0, 255, 255, .4);
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-radius: 50%;
-  display: block;
-  height: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: rotate(225deg);
-  width: 0;
-}
-
-.timer .hand:first-child {
-  transform: rotate(180deg);
-}
-
-.timer .hand span {
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.timer .hand:first-child span {
-  animation-name: spin1;
-}
-
-.timer .hand:last-child span {
-  animation-name: spin2; 
+  
 }
 
 .timer.hour {
@@ -207,18 +174,16 @@ p{
   top: 0;
 }
 
-.timer.hour .hand span {
-  animation-duration: 3600s;
-  border-top-color: rgba(255, 0, 255, .4);
-  border-right-color: rgba(255, 0, 255, .4);
-  border-width: 200px;
-}
-
 .timer.hour:after {
   height: 360px;
   left: 20px;
   width: 360px;
   top: 20px;
+  border-radius: 50%;
+background: linear-gradient(145deg, #3b3838, #322f2f);
+box-shadow:  28px 28px 56px #161515,
+             -28px -28px 56px #585353;
+  
 }
 
 .timer.minute {
@@ -229,12 +194,6 @@ p{
   top: 25px;
 }
 
-.timer.minute .hand span {
-  animation-duration: 60s;
-  border-top-color: rgba(0, 255, 255, .4);
-  border-right-color: rgba(0, 255, 255, .4);
-  border-width: 175px;
-}
 
 .timer.minute:after {
   height: 310px;
@@ -250,21 +209,6 @@ p{
   width: 300px;
   top: 50px;
 }
-
-.timer.second .hand span {
-  animation-duration: 1s;
-  border-top-color: rgba(255, 255, 255, .15);
-  border-right-color: rgba(255, 255, 255, .15);
-  border-width: 150px;
-}
-
-.timer.second:after {
-  height: 296px;
-  left: 2px;
-  width: 296px;
-  top: 2px;
-}
-
 .face {
   background: rgba(0, 0, 0, .1);
   border-radius: 50%;
@@ -292,7 +236,12 @@ p{
 }
 #start-break-timer{
   margin-bottom: 20px;
+  margin-top: 15px;
   align-items: center;
   height: 50px;
   width:50px;
+  border-radius: 50%;
+  background: #373434;
+  box-shadow: inset 5px 5px 10px #1e1d1d,
+              inset -5px -5px 10px #504b4b;
 }
