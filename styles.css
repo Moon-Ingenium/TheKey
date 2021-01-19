@@ -245,3 +245,18 @@ box-shadow:  28px 28px 56px #161515,
   box-shadow: inset 5px 5px 10px #1e1d1d,
               inset -5px -5px 10px #504b4b;
 }
+footer {
+  position:sticky;
+  bottom:0;
+  left:0;
+  height: 50px;
+  background-color: #D0DAEE;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  26px 26px 52px #a4a4a4,
+                 -26px -26px 52px #ffffff;
+    text-align: center;
+}
+.space{
+  margin-top:50px;
+  min-height: 100%;
+}
