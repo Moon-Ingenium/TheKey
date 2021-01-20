@@ -1,3 +1,6 @@
+body {
+  margin-bottom: 300px;
+}
 .navbar-brand {
     font-size: 60px;
     color: black;
@@ -246,17 +249,47 @@ box-shadow:  28px 28px 56px #161515,
               inset -5px -5px 10px #504b4b;
 }
 footer {
-  position:sticky;
-  bottom:0;
-  left:0;
-  height: 50px;
-  background-color: #D0DAEE;
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow:  26px 26px 52px #a4a4a4,
-                 -26px -26px 52px #ffffff;
-    text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0px;
+  background: #f0f0f0;
+  box-shadow: inset 27px 27px 37px #c2c2c2,
+              inset -27px -27px 37px #ffffff;
+    text-align: center; 
 }
-.space{
+.wrapper{
   margin-top:50px;
   min-height: 100%;
+  
+}
+.footer-icon{
+  margin-top: 15px;
+  margin-right: 50px;
+  padding:10px;
+  border-radius: 10px;
+  background: #cacaca;
+  box-shadow: inset 11px 11px 22px #666666,
+            inset -11px -11px 22px #ffffff;
+            
+}
+.footer-icon:hover{
+  color:rgb(114, 105, 105);
+  text-decoration: none;
+  margin-top: 15px;
+  margin-right: 50px;
+  padding:10px;
+}
+.built{
+  margin-top: 10px;
+  text-align: center;
+  color: #606060;
+}
+.border{
+  margin-top:10px;
+  margin-bottom: 10px;
+  border-bottom: 8px solid #666666;
+  box-shadow:  27px 27px 37px #606060,
+             -27px -27px 37px #ffffff;
 }
