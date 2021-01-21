@@ -145,20 +145,20 @@ let noteEl = document.getElementById('Textarea1');
 let saveBtnEl = document.querySelector('.save');
 let clearBtnEl = document.querySelector('.clear');
 let quickNote = noteEl.value;
-
+// getting notes from local storage
 window.onload = function getNotes() {
     if (localStorage.getItem('note') && localStorage.getItem('note') != '') {
    noteEl.textContent = noteItem;
     } 
 }
-
+// save notes to local storage
 saveBtnEl.addEventListener("click", function(){
     let quickNote = noteEl.value;
     localStorage.setItem('note', quickNote)
 console.log(quickNote)
 alert("clicked!")
 });
-
+// clear notes
 clearBtnEl.addEventListener("click", function(){
    noteEl.value = "";
     localStorage.removeItem('note', quickNote)
