@@ -67,9 +67,10 @@ body {
   .container{
       padding: 50px;
   }
-/* -- The outside rim of the clock with gradient -- */
 
 #clock-rim {
+  margin-left: auto;
+    margin-right: auto;
   display: block;
   position: relative;
   justify-content: center;
@@ -141,7 +142,8 @@ p{
 
   .timer-group {
     height: 400px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     width: 400px;
     border-radius: 50%;
@@ -153,10 +155,10 @@ p{
 
 .timer {
   border-radius: 50%;
-  height: 100px;
+  height: 625%;
   overflow: hidden;
   position: absolute;
-  width: 100px;
+  width: 625%;
   
 }
 
@@ -165,26 +167,26 @@ p{
   border-radius: 50%;
   content: "";
   display: block;
-  height: 80px;
+  height: 500%;
   left: 10px;
   position: absolute;
-  width: 80px;
+  width: 500%;
   top: 10px;
   
 }
 
 .timer.hour {
   background: rgba(0, 0, 0, .3);
-  height: 400px;
+  height: auto;
   left: 0;
   width: 100%;
   top: 0;
 }
 
 .timer.hour:after {
-  height: 360px;
+  height: auto;
   left: 20px;
-  width: 360px;
+  width: auto;
   top: 20px;
   border-radius: 50%;
 background: linear-gradient(145deg, #3b3838, #322f2f);
@@ -305,8 +307,8 @@ footer {
 }
 .dog{
   max-width: 200px;
+  max-height: auto;
   width:100%;
-  display: block;
   margin-left: auto;
   margin-right: auto;
   padding:15px;
@@ -317,4 +319,11 @@ footer {
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.form-control{
+  padding: 19px;
+  border-radius: 63px;
+background: #f5f5f5;
+box-shadow: inset 20px 20px 60px #bababa,
+            inset -20px -20px 60px #ffffff;
 }

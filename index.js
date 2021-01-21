@@ -1,3 +1,4 @@
+let noteItem = localStorage.getItem('note');
 let currentTime = moment().format('LT');
 let time = document.getElementById('time').textContent = currentTime;
 /* -- Convert degrees to radians (actually unused here :-) -- */
@@ -139,3 +140,26 @@ api2.onload = function () {
 }
 api2.open('GET', meme);
 api2.send();
+
+let noteEl = document.getElementById('Textarea1');
+let saveBtnEl = document.querySelector('.save');
+let clearBtnEl = document.querySelector('.clear');
+let quickNote = noteEl.value;
+
+window.onload = function getNotes() {
+    if (localStorage.getItem('note') && localStorage.getItem('note') != '') {
+   noteEl.textContent = noteItem;
+    } 
+}
+
+saveBtnEl.addEventListener("click", function(){
+    let quickNote = noteEl.value;
+    localStorage.setItem('note', quickNote)
+console.log(quickNote)
+alert("clicked!")
+});
+
+clearBtnEl.addEventListener("click", function(){
+   noteEl.value = "";
+    localStorage.removeItem('note', quickNote)
+});

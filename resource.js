@@ -12,7 +12,6 @@ function buildCard(input) {
     deleteBttnEl.setAttribute('class', 'btn');
     const delIcon = document.createElement("i");
     delIcon.setAttribute("class", "fa fa-trash");
-    
     deleteBttnEl.append(delIcon);
     cardEl.append(pEl);
     pEl.append(aEl);
