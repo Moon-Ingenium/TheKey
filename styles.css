@@ -138,16 +138,18 @@ p{
 * {
   box-sizing: border-box;
 }
-.timer-group {
-  height: 400px;
-  margin: 0 auto;
-  position: relative;
-  width: 400px;
-  border-radius: 50%;
-  background: #373434;
-  box-shadow:  28px 28px 70px #2f2d2d,
-               -28px -28px 70px #3f3b3b;
-}
+
+  .timer-group {
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    width: 400px;
+    border-radius: 50%;
+    background: #373434;
+    box-shadow:  28px 28px 70px #2f2d2d,
+                 -28px -28px 70px #3f3b3b;
+  }
+
 
 .timer {
   border-radius: 50%;

@@ -85,14 +85,36 @@ const timerElCard = document.querySelector(".break-card");
 let face = document.getElementById("lazy").textContent = formatTime(breakHour);
 const breakBtnEl = document.getElementById("start-break-timer");
 
+
 function startCountdown(breakhour) {
-    setInterval(function () {
+    breakBtnEl.innerHTML = '<i class="fa fa-stop"></i>';
+   let myTimer= setInterval(function () {
         face = document.getElementById("lazy").textContent = formatTime(breakHour);
         breakHour--;
-        if (breakHour < 0) {
-            clearInterval();
-        }
-    }, 1000
-    );
+    }, 1000 );
+    if (breakHour <= 0) {
+        alert("Take a break!")
+        clearInterval(myTimer);
 }
+//   get stop button
+}
+
 breakBtnEl.addEventListener("click", startCountdown);
+
+let xhr = new XMLHttpRequest();
+let queryURL = "https://api.adviceslip.com/advice";
+// Setup our listener to process completed requests
+xhr.onload = function () {
+
+	// Process our return data
+	if (xhr.status >= 200 && xhr.status < 300) {
+		// This will run when the request is successful
+		console.log('success!', xhr);
+	} else {
+		// This will run when it's not
+		console.log('The request failed!');
+    }
+}
+xhr.open('GET', queryURL);
+xhr.send();
+
