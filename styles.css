@@ -310,12 +310,13 @@ footer {
   
 }
 .dog{
-  max-width: 200px;
+  max-width: 400px;
   max-height: auto;
   width:100%;
   margin-left: auto;
   margin-right: auto;
-  padding:15px;
+  padding:10px;
+  margin-bottom: 15px;
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   0 6.7px 5.3px rgba(0, 0, 0, 0.048),

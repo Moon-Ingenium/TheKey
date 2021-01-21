@@ -123,15 +123,17 @@ api.open('GET', queryURL);
 api.send();
 
 let api2 = new XMLHttpRequest();
-let meme = "https://dog.ceo/api/breeds/image/random";
+let meme = "https://meme-api.herokuapp.com/gimme";
 
 // Setup our listener to process completed requests
 api2.onload = function () {
 	// Process our return data
 	if (api2.status >= 200 && api2.status < 300) {
-		// This will run when the request is successful
-        let response = JSON.parse(api2.responseText);
-        document.querySelector(".dog").setAttribute("src", (response.message)); 
+        // This will run when the request is successful
+        console.log(api2.response)
+        let response = JSON.parse(api2.response);
+        console.log(response.url)
+        document.querySelector(".dog").setAttribute("src", (response.url)); 
 	} else {
 		// This will run when it's not
 		console.log('The request failed!');
