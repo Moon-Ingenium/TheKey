@@ -297,3 +297,12 @@ footer {
   box-shadow:  27px 27px 37px #606060,
              -27px -27px 37px #ffffff;
 }
+.daily-qoute{
+  text-align: center;
+  font-size: large;
+  margin-top:15px;
+  
+}
+.dog{
+  border: 1px solid black;
+}

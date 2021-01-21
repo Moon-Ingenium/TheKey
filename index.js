@@ -101,20 +101,41 @@ function startCountdown(breakhour) {
 
 breakBtnEl.addEventListener("click", startCountdown);
 
-let xhr = new XMLHttpRequest();
+let api = new XMLHttpRequest();
 let queryURL = "https://api.adviceslip.com/advice";
 // Setup our listener to process completed requests
-xhr.onload = function () {
-
+api.onload = function () {
 	// Process our return data
-	if (xhr.status >= 200 && xhr.status < 300) {
+	if (api.status >= 200 && api.status < 300) {
 		// This will run when the request is successful
-		console.log('success!', xhr);
+        let res = JSON.parse(api.responseText);
+        let adviceObject = res.slip.advice;
+        document.querySelector(".daily-qoute").innerHTML = ' " '+ adviceObject + ' " ';
+        
 	} else {
 		// This will run when it's not
 		console.log('The request failed!');
     }
+    
 }
-xhr.open('GET', queryURL);
-xhr.send();
+api.open('GET', queryURL);
+api.send();
 
+let api2 = new XMLHttpRequest();
+let meme = "https://dog.ceo/api/breeds/image/random";
+
+// Setup our listener to process completed requests
+api2.onload = function () {
+	// Process our return data
+	if (api2.status >= 200 && api2.status < 300) {
+		// This will run when the request is successful
+        let response = JSON.parse(api2.responseText);
+        document.querySelector(".dog").setAttribute("src", (response.message)); 
+	} else {
+		// This will run when it's not
+		console.log('The request failed!');
+    }
+    
+}
+api2.open('GET', meme);
+api2.send();
