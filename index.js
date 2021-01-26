@@ -91,7 +91,7 @@ let myTimer;
 
 function startCountdown() {
 
-    // breakHour = localStorage.getItem('timer');
+    breakHour = localStorage.getItem('timer');
     breakBtnEl.innerHTML = '<i class="fa fa-stop"></i>';
     myTimer = setInterval(function () {
         face = document.getElementById("lazy").textContent = formatTime(breakHour);
@@ -99,9 +99,6 @@ function startCountdown() {
         if (breakHour <= 0) {
             alert("Take a break!")
             stopTime();
-            breakBtnEl.innerHTML = '<i class="fa fa-play"></i>';
-            breakHour = 3600;
-            face = document.getElementById("lazy").textContent = formatTime(breakHour);
         }
         breakHour--;
     }, 1000)
@@ -111,11 +108,9 @@ function startCountdown() {
 }
 function stopTime() {
     clearInterval(myTimer);
-
-//     // breakBtnEl.addEventListener("click", function stop() {
-//     //     alert("stop")
-//     //     clearInterval(myTimer);
-//     });
+    breakBtnEl.innerHTML = '<i class="fa fa-play"></i>';
+    breakHour = 3600;
+    face = document.getElementById("lazy").textContent = formatTime(breakHour);
 }
 
 breakBtnEl.addEventListener("click", startCountdown);
