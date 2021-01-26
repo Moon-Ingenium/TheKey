@@ -87,28 +87,35 @@ calendarEl.innerHTML = calendarDay;
 const timerElCard = document.querySelector(".break-card");
 let face = document.getElementById("lazy").textContent = formatTime(breakHour);
 const breakBtnEl = document.getElementById("start-break-timer");
-
+let myTimer;
 
 function startCountdown() {
-    breakHour = localStorage.getItem('timer');
+
+    // breakHour = localStorage.getItem('timer');
     breakBtnEl.innerHTML = '<i class="fa fa-stop"></i>';
-    let myTimer = setInterval(function () {
+    myTimer = setInterval(function () {
         face = document.getElementById("lazy").textContent = formatTime(breakHour);
+        localStorage.setItem('timer', breakHour);
+        if (breakHour <= 0) {
+            alert("Take a break!")
+            stopTime();
+            breakBtnEl.innerHTML = '<i class="fa fa-play"></i>';
+            breakHour = 3600;
+            face = document.getElementById("lazy").textContent = formatTime(breakHour);
+        }
         breakHour--;
-       localStorage.setItem('timer', breakHour);
-    }, 1000);
-    if (breakHour <= 0) {
-        alert("Take a break!")
-        clearInterval(myTimer);
-    }
+    }, 1000)
+
     //   get stop button
-    stopTime();
+
 }
-function stopTime(myTimer){
-    breakBtnEl.addEventListener("click", function stop(){
-        alert("stop")
-        clearInterval(myTimer);
-    });
+function stopTime() {
+    clearInterval(myTimer);
+
+//     // breakBtnEl.addEventListener("click", function stop() {
+//     //     alert("stop")
+//     //     clearInterval(myTimer);
+//     });
 }
 
 breakBtnEl.addEventListener("click", startCountdown);
@@ -162,7 +169,7 @@ window.onload = function getNotes() {
         noteEl.textContent = noteItem;
     }
     face = document.getElementById("lazy").textContent = formatTime(localStorage.getItem('timer'));
- startCountdown();
+    startCountdown();
 }
 // save notes to local storage
 saveBtnEl.addEventListener("click", function () {
@@ -171,12 +178,12 @@ saveBtnEl.addEventListener("click", function () {
     modal.style.display = "block";
 });
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
     }
-  }
+}
 // clear notes
 clearBtnEl.addEventListener("click", function () {
     noteEl.value = "";
