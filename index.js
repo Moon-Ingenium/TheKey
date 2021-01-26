@@ -1,6 +1,5 @@
 const modal = document.getElementById("myModal");
-const span = document.getElementsByClassName("close")[0];
-
+let breakHour = 3600;
 let noteItem = localStorage.getItem('note');
 let currentTime = moment().format('LT');
 let time = document.getElementById('time').textContent = currentTime;
@@ -84,23 +83,32 @@ calendarEl.innerHTML = calendarDay;
 
 // create Break Timer
 
-let breakHour = 3600;
+
 const timerElCard = document.querySelector(".break-card");
 let face = document.getElementById("lazy").textContent = formatTime(breakHour);
 const breakBtnEl = document.getElementById("start-break-timer");
 
 
-function startCountdown(breakhour) {
+function startCountdown() {
+    breakHour = localStorage.getItem('timer');
     breakBtnEl.innerHTML = '<i class="fa fa-stop"></i>';
     let myTimer = setInterval(function () {
         face = document.getElementById("lazy").textContent = formatTime(breakHour);
         breakHour--;
+       localStorage.setItem('timer', breakHour);
     }, 1000);
     if (breakHour <= 0) {
         alert("Take a break!")
         clearInterval(myTimer);
     }
     //   get stop button
+    stopTime();
+}
+function stopTime(myTimer){
+    breakBtnEl.addEventListener("click", function stop(){
+        alert("stop")
+        clearInterval(myTimer);
+    });
 }
 
 breakBtnEl.addEventListener("click", startCountdown);
@@ -133,9 +141,7 @@ api2.onload = function () {
     // Process our return data
     if (api2.status >= 200 && api2.status < 300) {
         // This will run when the request is successful
-        console.log(api2.response)
         let response = JSON.parse(api2.response);
-        console.log(response.url)
         document.querySelector(".dog").setAttribute("src", (response.url));
     } else {
         // This will run when it's not
@@ -155,6 +161,8 @@ window.onload = function getNotes() {
     if (localStorage.getItem('note') && localStorage.getItem('note') != '') {
         noteEl.textContent = noteItem;
     }
+    face = document.getElementById("lazy").textContent = formatTime(localStorage.getItem('timer'));
+ startCountdown();
 }
 // save notes to local storage
 saveBtnEl.addEventListener("click", function () {
