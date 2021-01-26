@@ -1,3 +1,6 @@
+const modal = document.getElementById("myModal");
+const span = document.getElementsByClassName("close")[0];
+
 let noteItem = localStorage.getItem('note');
 let currentTime = moment().format('LT');
 let time = document.getElementById('time').textContent = currentTime;
@@ -89,15 +92,15 @@ const breakBtnEl = document.getElementById("start-break-timer");
 
 function startCountdown(breakhour) {
     breakBtnEl.innerHTML = '<i class="fa fa-stop"></i>';
-   let myTimer= setInterval(function () {
+    let myTimer = setInterval(function () {
         face = document.getElementById("lazy").textContent = formatTime(breakHour);
         breakHour--;
-    }, 1000 );
+    }, 1000);
     if (breakHour <= 0) {
         alert("Take a break!")
         clearInterval(myTimer);
-}
-//   get stop button
+    }
+    //   get stop button
 }
 
 breakBtnEl.addEventListener("click", startCountdown);
@@ -106,18 +109,18 @@ let api = new XMLHttpRequest();
 let queryURL = "https://api.adviceslip.com/advice";
 // Setup our listener to process completed requests
 api.onload = function () {
-	// Process our return data
-	if (api.status >= 200 && api.status < 300) {
-		// This will run when the request is successful
+    // Process our return data
+    if (api.status >= 200 && api.status < 300) {
+        // This will run when the request is successful
         let res = JSON.parse(api.responseText);
         let adviceObject = res.slip.advice;
-        document.querySelector(".daily-qoute").innerHTML = ' " '+ adviceObject + ' " ';
-        
-	} else {
-		// This will run when it's not
-		console.log('The request failed!');
+        document.querySelector(".daily-qoute").innerHTML = ' " ' + adviceObject + ' " ';
+
+    } else {
+        // This will run when it's not
+        console.log('The request failed!');
     }
-    
+
 }
 api.open('GET', queryURL);
 api.send();
@@ -127,18 +130,18 @@ let meme = "https://meme-api.herokuapp.com/gimme";
 
 // Setup our listener to process completed requests
 api2.onload = function () {
-	// Process our return data
-	if (api2.status >= 200 && api2.status < 300) {
+    // Process our return data
+    if (api2.status >= 200 && api2.status < 300) {
         // This will run when the request is successful
         console.log(api2.response)
         let response = JSON.parse(api2.response);
         console.log(response.url)
-        document.querySelector(".dog").setAttribute("src", (response.url)); 
-	} else {
-		// This will run when it's not
-		console.log('The request failed!');
+        document.querySelector(".dog").setAttribute("src", (response.url));
+    } else {
+        // This will run when it's not
+        console.log('The request failed!');
     }
-    
+
 }
 api2.open('GET', meme);
 api2.send();
@@ -150,18 +153,24 @@ let quickNote = noteEl.value;
 // getting notes from local storage
 window.onload = function getNotes() {
     if (localStorage.getItem('note') && localStorage.getItem('note') != '') {
-   noteEl.textContent = noteItem;
-    } 
+        noteEl.textContent = noteItem;
+    }
 }
 // save notes to local storage
-saveBtnEl.addEventListener("click", function(){
+saveBtnEl.addEventListener("click", function () {
     let quickNote = noteEl.value;
     localStorage.setItem('note', quickNote)
-console.log(quickNote)
-alert("clicked!")
+    modal.style.display = "block";
 });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 // clear notes
-clearBtnEl.addEventListener("click", function(){
-   noteEl.value = "";
+clearBtnEl.addEventListener("click", function () {
+    noteEl.value = "";
     localStorage.removeItem('note', quickNote)
 });
