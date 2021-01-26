@@ -2,21 +2,21 @@ let addBttnEl = document.getElementById("add");
 let cardEl = document.querySelector(".resource-body");
 var resource = localStorage.getItem("resource");
 const deleteBttnEl = document.createElement("button");
+let i=0;
 
 function buildCard(input) {
+    i++
     const aEl = document.createElement("a");
     const pEl = document.createElement("p");
     aEl.setAttribute("href", input);
     aEl.setAttribute("target", "_blank");
     aEl.textContent= input;
     const deleteBttnEl = document.createElement("button");
-    deleteBttnEl.setAttribute('class', 'btn');
+    deleteBttnEl.setAttribute('class', 'btn delete');
     const delIcon = document.createElement("i");
     delIcon.setAttribute("class", "fa fa-trash");
     // add data attribute to dynamic delete button 
-    for (var i = 0; i < deleteBttnEl.length; i++) {
     deleteBttnEl.setAttribute("data-index", i);
-    }
     deleteBttnEl.append(delIcon);
     cardEl.append(pEl);
     pEl.append(aEl);
@@ -47,12 +47,10 @@ addBttnEl.addEventListener("click",function addResource() {
 });
 
 // on click event to delete from card and to delete from local storage
-
-let delRessource = document.querySelector("data").value;
-console.log(delRessource)
-
-delRessource.addEventListener("click", function delResource(event){
-    var index = element.parentElement.getAttribute("data-index");
-    localStorage.removeItem(index);
+document.getElementByClass("delete").addEventListener("click", function delResource(event){
+let element = event.target;
+    let index = element.getAttribute("data-index");
+    localStorage.removeItem("resource");
     buildCard();
+    alert("clicked")
 })
