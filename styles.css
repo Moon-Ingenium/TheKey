@@ -379,9 +379,14 @@ box-shadow: inset 20px 20px 60px #bababa,
 .city-search-container {
   text-align: center;
 }
-
-.day{
-  background-color: blue;
-  color: white;
-  
+.city-button{
+  border: none;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  /* border: 1px solid #888; */
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 50px;
+  background: linear-gradient(145deg, #ffffff, #dddddd);
+  box-shadow:  37px 37px 100px #919191,
+             -37px -37px 100px #ffffff;
 }

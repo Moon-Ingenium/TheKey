@@ -35,13 +35,11 @@ function getUvIndex(lat, lon) {
     });
 }
 function cityHistoryDisplay(newCity) {
-    console.log(newCity);
     for (var i = 0; i < cities.length; i++) {
-        // if statement
         var currentCity = newCity || cities[i];
         if (!newCity) {
             var cityListBtn = $("<button>").text(currentCity);
-            cityListBtn.addClass("city-button btn btn-lg btn-block btn-outline-dark");
+            cityListBtn.addClass("city-button");
             displayEl.append(cityListBtn);
             localStorage.setItem("cities", cities);
         }
@@ -86,7 +84,7 @@ function cityHistoryDisplay(newCity) {
                 var icon = $("<img>");
                 var humidity = $("<div>");
                 var forecastDay = $("<div class = 'col'>");
-                var card = $("<div class = 'card bg-primary text-white'>");
+                var card = $("<div class = 'card bg-primary text-black'>");
                 $("#forecast").append(forecastDay);
                 forecastDay.append(card);
                 card.append(body);
