@@ -90,8 +90,13 @@ const breakBtnEl = document.getElementById("start-break-timer");
 let myTimer;
 
 function startCountdown() {
+    if (!localStorage.getItem('timer')) {
+        breakHour = 3600;
+    }
+    else {
+        breakHour = JSON.parse(localStorage.getItem('timer'));
 
-    breakHour = localStorage.getItem('timer');
+    }
     breakBtnEl.innerHTML = '<i class="fa fa-stop"></i>';
     myTimer = setInterval(function () {
         face = document.getElementById("lazy").textContent = formatTime(breakHour);
@@ -103,17 +108,23 @@ function startCountdown() {
         breakHour--;
     }, 1000)
 
-    //   get stop button
 
 }
+
+// pauseTimer();
 function stopTime() {
     clearInterval(myTimer);
     breakBtnEl.innerHTML = '<i class="fa fa-play"></i>';
     breakHour = 3600;
     face = document.getElementById("lazy").textContent = formatTime(breakHour);
 }
+// function pauseTimer(breakHour){
+//     if (breakHour>0){
+//         breakBtnEl.addEventListener("click", stopTime);
+//     }
 
-breakBtnEl.addEventListener("click", startCountdown);
+// }
+breakBtnEl.addEventListener("click", stopTime);
 
 let api = new XMLHttpRequest();
 let queryURL = "https://api.adviceslip.com/advice";
