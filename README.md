@@ -2,8 +2,7 @@
 * Still a work in progress, not quite an MVP.
 # Description
 * A Front End virtual planner app for accountability designed to organize the job search process. A user can save helpful resource links, take quick notes, track time and day they're working all while maintining a positive tone
-
-
+* 5 day Weather Tracker
 * Current date and time are automatically displayed
 * API renders daily advice
 * API renders random meme for the day
@@ -12,7 +11,7 @@
 * Footer links to Github repo, Linkedin, and portfolio
 
 # Coming soon
-* Daily Weather
+
 * Workout tracker
 
 # Technologies
