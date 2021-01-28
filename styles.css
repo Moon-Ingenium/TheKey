@@ -367,3 +367,21 @@ box-shadow: inset 20px 20px 60px #bababa,
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
 }
+.page-header {
+  background-color: rgb(53, 51, 51);
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  padding: 15px;
+  margin: 15px;
+}
+
+.city-search-container {
+  text-align: center;
+}
+
+.day{
+  background-color: blue;
+  color: white;
+  
+}

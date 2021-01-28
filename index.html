@@ -31,55 +31,94 @@
         </div>
     </header>
     <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="row">
-                    <div id="weekday">
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="calendar-day">
-
-                    </div>
-                    <div class="row">
-                        <em class="daily-qoute"></em>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="card-title">Quick Notes</div>
-                            <textarea class="form-control" id="Textarea1" rows="10"></textarea>
-                        </div>
-                        <button class="btn save"><i data-feather="star"></i>
-                            <div id="myModal" class="modal">
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                  <small>Saved!</small>
-                                </div>
-                              
-                              </div></button>
-                        <button class="btn clear"><i data-feather="trash"></i></i></button>
+        <div class="card">
+        <div class="page-header">
+            <h1>Weather Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Search for City:</h1>
+                        <form class="form-inline">
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="search-text">
+                            <button type="submit" class="btn search-btn btn-primary mb-2">Search</button>
                         </form>
+                        <ul class="search-list"></ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-title" id="time"></div>
-                <div class="card-body clock"></div>
-                <div id="clock-rim">
-                    <div id="clock-face">
-                        <div id="notch-container"></div>
-                        <div id="hour"></div>
-                        <div id="minute"></div>
-                        <div id="second"></div>
-                        <div id="center"></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="city"></h1>
+                            <div class="temp"></div>
+                            <div class="humidity"></div>
+                            <div class="wind"></div>
+                            <div class="uvIndex"></div>
+                        </div>
+                        <div class="container"></div>
+                        <h1 class="five-day-forecast"></h1>
+                        <div class="row" id="forecast">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+</div>
     <div class="row">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="row">
+                        <div id="weekday">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="calendar-day">
+                        </div>
+                        <div class="row">
+                            <em class="daily-qoute"></em>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="card-title">Quick Notes</div>
+                                <textarea class="form-control" id="Textarea1" rows="10"></textarea>
+                            </div>
+                            <button class="btn save"><i data-feather="star"></i>
+                                <div id="myModal" class="modal">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <small>Saved!</small>
+                                    </div>
+
+                                </div>
+                            </button>
+                            <button class="btn clear"><i data-feather="trash"></i></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-title" id="time"></div>
+                    <div class="card-body clock"></div>
+                    <div id="clock-rim">
+                        <div id="clock-face">
+                            <div id="notch-container"></div>
+                            <div id="hour"></div>
+                            <div id="minute"></div>
+                            <div id="second"></div>
+                            <div id="center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="card break-card">
                 <div class="card-title">Productivity Timer</div>
@@ -123,16 +162,23 @@
                         class="fa fa-github fa-lg"></i> 2021</a></small>
         </footer>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-        <script>
-            feather.replace()
-          </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/open-weather/2.0.0/openweather.min.js"
+        integrity="sha512-mlRoH3bU+q4t5clJkMwltJcka6JyNWsUJybBclHUiU0Bdux6LtcNqO8XMNi9/vp4+KCteAbc0hYnHU4Rh2SH+g=="
+        crossorigin="anonymous"></script>
+    <script>
+        feather.replace()
+    </script>
     <script src="./index.js"></script>
+    <script src="./weather.js"></script>
 </body>
