@@ -18,7 +18,7 @@ function getUvIndex(lat, lon) {
         url: queryUrl,
         method: "GET"
     }).then(function (response) {
-        uvEl.text("UV Index: " + response.value);
+        uvEl.text("UV Index: " + Math.floor(response.value));
         // uv mild 
         if (response.value <= 2) {
             uvEl.css("background-color", "yellow");
@@ -59,9 +59,9 @@ function cityHistoryDisplay(newCity) {
         console.log(weatherEl);
         weatherEl.attr("src", "http://openweathermap.org/img/w/" + weatherIcon + ".png");
         cityDiv.html(" Weather Details: " + response.name + " " + date + " " + weatherEl.prop('outerHTML'));
-        $(".humidity").text("Humidity: " + response.main.humidity + " %");
-        $(".temp").text("Temprature: " + response.main.temp + " ℉");
-        $(".wind").text("Wind Speed: " + response.wind.speed + " MPH")
+        $(".humidity").text("Humidity: " + Math.floor(response.main.humidity) + " %");
+        $(".temp").text("Temprature: " + Math.floor(response.main.temp) + " ℉");
+        $(".wind").text("Wind Speed: " + Math.floor(response.wind.speed) + " MPH")
     });
 
     var fiveDayQueryUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + currentCity + "&appid=36edb26270cfd8ba7f33ada2c6f55cab&units=imperial";
@@ -90,11 +90,11 @@ function cityHistoryDisplay(newCity) {
                 card.append(body);
                 body.append(date);
                 body.append(temp);
-                temp.text(current.main.temp + " ℉");
+                temp.text(Math.floor(current.main.temp) + " ℉");
                 body.append(icon);
                 icon.attr("src", "http://openweathermap.org/img/w/" + currentIcon + ".png");
                 body.append(humidity);
-                humidity.text(current.main.humidity + "%");
+                humidity.text(Math.floor(current.main.humidity) + "%");
                 date.text(moment(current.dt_txt).format("ll"));
 
             }
