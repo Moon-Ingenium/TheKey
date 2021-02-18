@@ -7,9 +7,11 @@ var cities = [];
 var header = $(".forecast-header");
 var forecastEl = $(".five-day-forecast");
 var forecastRow = $("#forecast");
+var weatherDiv = $(".weather-div");
 function displaySearchCity() {
     searchText = searchInput.val();
     cities.push(searchText);
+
 }
 // on click event to get city 
 function getUvIndex(lat, lon) {
@@ -18,6 +20,7 @@ function getUvIndex(lat, lon) {
         url: queryUrl,
         method: "GET"
     }).then(function (response) {
+        displayEl.css("display", "block");
         uvEl.text("UV Index: " + Math.floor(response.value));
         // uv mild 
         if (response.value <= 2) {
@@ -50,6 +53,7 @@ function cityHistoryDisplay(newCity) {
         url: queryUrl,
         method: "GET"
     }).then(function (response) {
+        weatherDiv.css("display", "block");
         getUvIndex(response.coord.lat, response.coord.lon);
         var cityDiv = $(".city");
         // show city, date, and weather icon 

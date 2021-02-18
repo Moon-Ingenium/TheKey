@@ -390,3 +390,10 @@ box-shadow: inset 20px 20px 60px #bababa,
   box-shadow:  37px 37px 100px #919191,
              -37px -37px 100px #ffffff;
 }
+.search-btn{
+display: block;
+position: relative;
+justify-content: center;
+  margin-left: 30px;
+  margin-right: auto;
+}  
