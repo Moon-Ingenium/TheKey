@@ -8,6 +8,7 @@ var header = $(".forecast-header");
 var forecastEl = $(".five-day-forecast");
 var forecastRow = $("#forecast");
 var weatherDiv = $(".weather-div");
+
 function displaySearchCity() {
     searchText = searchInput.val();
     cities.push(searchText);
@@ -60,7 +61,6 @@ function cityHistoryDisplay(newCity) {
         var date = moment(response.dt_txt).format("ll")
         var weatherEl = $("<img>");
         var weatherIcon = response.weather[0].icon;
-        console.log(weatherEl);
         weatherEl.attr("src", "http://openweathermap.org/img/w/" + weatherIcon + ".png");
         cityDiv.html(" Weather Details: " + response.name + " " + date + " " + weatherEl.prop('outerHTML'));
         $(".humidity").text("Humidity: " + Math.floor(response.main.humidity) + " %");

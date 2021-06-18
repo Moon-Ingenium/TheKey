@@ -1,5 +1,6 @@
 body {
   margin-bottom: 300px;
+  
 }
 .navbar-brand {
     font-size: 60px;
@@ -15,6 +16,11 @@ body {
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow:  26px 26px 52px #a4a4a4,
                  -26px -26px 52px #ffffff;
+                 display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
   }
 
   .navbar-item{
@@ -30,6 +36,14 @@ body {
   body {
       background-color: #e0e0e0;
   }
+  .main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
   .card{
     border-radius: 31px;
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
@@ -37,7 +51,30 @@ body {
                  -26px -26px 52px #ffffff;
     padding: 15px;
     border: none;
+    margin: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    max-width: 500px;
+  }
+  .search-card{
+    border-radius: 31px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  26px 26px 52px #a4a4a4,
+                 -26px -26px 52px #ffffff;
+    padding: 15px;
+    border: none;
     margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: left;
+    min-width: 50px;
   }
   .btn{
     border-radius: 50%;

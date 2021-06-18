@@ -46,11 +46,3 @@ addBttnEl.addEventListener("click",function addResource() {
     
 });
 
-// on click event to delete from card and to delete from local storage
-// document.getElementByClass("delete").addEventListener("click", function delResource(event){
-// let element = event.target;
-//     let index = element.getAttribute("data-index");
-//     localStorage.removeItem("resource");
-//     buildCard();
-//     alert("clicked")
-// })
