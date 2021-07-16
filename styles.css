@@ -162,12 +162,14 @@ box-shadow: inset 11px 11px 28px #c9c9c9,
 #calendar-day{
     font-size: 30px;
     text-align: center;
+    
 }
 #weekday{
     font-size: 60px;
     font-family: 'Fredericka the Great';
   margin-left: 20px;
   text-align: center;
+  animation: wiggle 200ms 8 ease-out none;
 }
 a{
     color:black;
@@ -361,13 +363,15 @@ footer {
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
+  animation: flip 200ms 8 none;
 }
 .form-control{
   padding: 19px;
   border-radius: 63px;
-background: #f5f5f5;
-box-shadow: inset 20px 20px 60px #bababa,
+  background: #f5f5f5;
+  box-shadow: inset 20px 20px 60px #bababa,
             inset -20px -20px 60px #ffffff;
+            
 }
 .save{
   margin-top:30px;
@@ -434,3 +438,31 @@ justify-content: center;
   margin-left: 30px;
   margin-right: auto;
 }  
+@keyframes wiggle {
+  0% { 
+    transform: rotateZ(0);
+   
+  }
+  50%{
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes flip {
+  0% { 
+    transform: rotateZ(0);
+   z-index: 2;
+    
+  }
+  50%{
+    transform: rotateZ(160deg);
+    z-index: 2;
+  }
+  100% {
+    transform: rotateZ(360deg);
+    z-index: 1;
+  }
+}
