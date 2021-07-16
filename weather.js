@@ -8,6 +8,7 @@ var header = $(".forecast-header");
 var forecastEl = $(".five-day-forecast");
 var forecastRow = $("#forecast");
 var weatherDiv = $(".weather-div");
+var weatherContainer = $(".weather-container")
 
 function displaySearchCity() {
     searchText = searchInput.val();

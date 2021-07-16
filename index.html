@@ -35,7 +35,7 @@
             <div class="page-header">
                 <h1>Weather Dashboard</h1>
             </div>
-                    <div class="search-card">
+                    <div class="search-card card">
                         <div class="card-body">
                             <h1>Search for City:</h1>
                             <form class="form-inline">
@@ -46,7 +46,7 @@
                             <ul class="search-list"></ul>
                     
                 </div>
-                    <div class="row">
+                    <div class="col-md-12">
                         <div class="weather-div card" style="display:none">
                             <div class="card-body">
                                 <h1 class="city"></h1>
@@ -55,7 +55,7 @@
                                 <div class="wind"></div>
                                 <div class="uvIndex"></div>
                             </div>
-                            <div class="container"></div>
+                            <div class="weather-container container"></div>
                             <h1 class="five-day-forecast"></h1>
                             <div class="row" id="forecast">
                             </div>
@@ -111,20 +111,9 @@
                 </div>
         <div class="card break-card">
             <div class="card-title">Productivity Timer</div>
-            <div class="timer-group">
-                <div class="timer hour">
-                </div>
-                <div class="timer minute">
-                </div>
-                <div class="timer second">
-                </div>
-                <div class="face">
-                    <h2>Break Timer</h2>
-                    <p id="lazy">00:00:00</p>
-                    <button id="start-break-timer"><i class="fa fa-play"></i></button>
-                </div>
-            </div>
-            
+            <div id="break-timer"></div>
+            <button class="btn" id="start"><i class="fa fa-play"></i></button>
+            <button class="btn" id="stop"><i class="fa fa-stop"></i></button>
      </div>
    
             <div class="card">
