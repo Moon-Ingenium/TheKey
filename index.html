@@ -31,39 +31,7 @@
         </div>
     </header>
  <div class="main-container">
-        <div class="card">
-            <div class="page-header">
-                <h1>Weather Dashboard</h1>
-            </div>
-                    <div class="search-card card">
-                        <div class="card-body">
-                            <h1>Search for City:</h1>
-                            <form class="form-inline">
-                                <input type="text" class="form-control mb-2 mr-sm-2" id="search-text">
-                                <button type="submit" class="btn search-btn btn-primary mb-2"><i
-                                        class="fa fa-search"></i></button>
-                            </form>
-                            <ul class="search-list"></ul>
-                    
-                </div>
-                    <div class="col-md-12">
-                        <div class="weather-div card" style="display:none">
-                            <div class="card-body">
-                                <h1 class="city"></h1>
-                                <div class="temp"></div>
-                                <div class="humidity"></div>
-                                <div class="wind"></div>
-                                <div class="uvIndex"></div>
-                            </div>
-                            <div class="weather-container container"></div>
-                            <h1 class="five-day-forecast"></h1>
-                            <div class="row" id="forecast">
-                            </div>
-                        </div>
-                    </div>
-               
-            </div>
-        </div>
+   
                 <div class="card">
                     <div class="row">
                         <div id="weekday">
@@ -111,7 +79,7 @@
                 </div>
         <div class="card break-card">
             <div class="card-title">Productivity Timer</div>
-            <div id="break-timer"></div>
+            <div class= card-body id="break-timer"></div>
             <div class="row">
             <button class="btn" id="start"><i class="fa fa-play"></i></button>
             <button class="btn" id="stop"><i class="fa fa-stop"></i></button>
@@ -128,6 +96,34 @@
     </div>
 </div>
 </div>
+</div>
+<div class="containter">
+<div class="page-header">Weather Dashboard</div>
+<div class="card weather-card">
+    <div class="card-title">Search for City:</div>
+            <div class="card-body">
+                <form class="form-inline">
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="search-text">
+                    <button type="submit" class="btn search-btn btn-primary mb-2"><i
+                            class="fa fa-search"></i></button>
+                </form>
+            <div class="weather-div card" style="display:none">
+                <div class="card-body">
+                    <h1 class="city"></h1>
+                    <div class="temp"></div>
+                    <div class="humidity"></div>
+                    <div class="wind"></div>
+                    <div class="uvIndex"></div>
+                </div>
+                <h1 class="five-day-forecast"></h1>
+                <div class="row" id="forecast"></div>
+            </div>
+      
+</div>
+</div>
+</div>
+</body>
+
     <div class="wrapper">
         <footer>
             <div class="icon-links">

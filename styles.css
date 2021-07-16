@@ -55,7 +55,7 @@ body {
   align-items: center;
   justify-content: center;
   align-content: center;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 .search-card {
   border-radius: 31px;
@@ -230,10 +230,11 @@ p {
 }
 
 #break-timer {
-  font-size: 150px;
+  font-size: 100px;
   font-family: "Fredericka the Great";
   margin-left: 20px;
   text-align: center;
+  width: 100%;
 }
 footer {
   position: fixed;
@@ -354,6 +355,9 @@ footer {
 }
 #start{
   margin-right: 30px;
+}
+.weather-card{
+ max-width:100%;
 }
 @keyframes wiggle {
   0% {
